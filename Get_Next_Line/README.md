@@ -62,3 +62,11 @@ Also the static variable is **initialized** by default as **0** if not specify i
 ### File Descriptor 
 When a program open a file, the Operating System return a file descriptor as non-negative unique integer that the program can use to perform operations on that file, such as reading, writing or closing it.
 
+### File Descriptor Table
+Fd **table** is a data structure specific to each process.  
+Each process has its own FdTable, which contain the File descriptors and a pointer to an **entry** in the **File Table**.  
+**Remember :** Every process has its **own** File descriptor table!  
+<p align="center">
+	<img src="https://i.ibb.co/w4dKwjX/File-table-and-inode-table-svg.png" width = "250">
+</p>
+
