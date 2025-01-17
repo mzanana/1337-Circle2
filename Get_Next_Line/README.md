@@ -56,3 +56,9 @@ Static Variable : 1 2
 The static variable initialized **once** and **live** till the end of the entire program.  
 Also the static variable is **initialized** by default as **0** if not specify it. The local variables initialized by garbage value.  
 
+
+# File Descriptor and System Calls
+
+### File Descriptor 
+When a program open a file, the Operating System return a file descriptor as non-negative unique integer that the program can use to perform operations on that file, such as reading, writing or closing it.
+
