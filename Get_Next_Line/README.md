@@ -83,3 +83,10 @@ The *global inode table* hold the metadata of each file in the filesystem, it st
 <p align = "center">
 	<img src="https://i.ibb.co/n16N30S/FY17-UAi-VUAAe-Fr-S.jpg" width="500">
 </p>
+
+The difference between the **access mode** and the **Permissions :**
++ **Access mode :** indicate how a specific process intend to interact with an open file ( it set at the time the file is opened by the process). The access mode can vary from process to another.   
+  It can be only Read or Write or both of them (R - W - RW).
+
++ **Permissions :** Define the access rights for a file, controlling which users and groups are allowed to read, write or both. They are set at the file system level and are generally the same for all the processes.
+
