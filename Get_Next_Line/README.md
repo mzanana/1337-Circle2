@@ -70,3 +70,7 @@ Each process has its own FdTable, which contain the File descriptors and a point
 	<img src="https://i.ibb.co/w4dKwjX/File-table-and-inode-table-svg.png" width = "250">
 </p>
 
+### GLOBAL VIEW
+<p align = "center">
+	<img src="https://i.ibb.co/n16N30S/FY17-UAi-VUAAe-Fr-S.jpg" width="500">
+</p>
