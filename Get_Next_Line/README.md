@@ -11,3 +11,7 @@ Like we did in our last project [Born2BeRoot](https://github.com/Zanana-med/Born
 ```C
 static Data_Type Var_Name = Var_Value;
 ```
+
+**Local variable** is destroyed and lose its value when the function that contain this variable is over. The local variable stored on the **Stack** memory area.   
+
+**Static variable** stored on the **data segment** in the memory, it has the ability to preserve its value, even if the variable out of its function scope!  
