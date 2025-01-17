@@ -70,7 +70,16 @@ Each process has its own FdTable, which contain the File descriptors and a point
 	<img src="https://i.ibb.co/w4dKwjX/File-table-and-inode-table-svg.png" width = "250">
 </p>
 
-### GLOBAL VIEW
+### File Table Entry 
+*File Table Entry* also named as *Global File Table* which is shared by all the processes, so different processes can share the same entry. Each **entry** stores information about the open file which contain the **OFFSET** (Current position withing the file), **ACCESS MODE** (read, write or read-write) and a **POINTER** to the vnode (Which hold the file metadata).  
+<p align ="center">
+	<img src="https://i.ibb.co/fHnp3sY/file-descriptors-example.png" width="500">
+</p>
+
+### Global Inode Table
+
+The *global inode table* hold the metadata of each file in the filesystem, it stores critical information about each file, such filename, size, permissions, timestamp and a pointer to the actual data block on the storage device.
+#### GLOBAL VIEW
 <p align = "center">
 	<img src="https://i.ibb.co/n16N30S/FY17-UAi-VUAAe-Fr-S.jpg" width="500">
 </p>
