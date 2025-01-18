@@ -122,7 +122,13 @@ For example i want to combine the stdout and stderr : `command > output.txt 2> e
 #### Operating System and Kernel
 
 + **Operating system** act as the intermediary between the user and the computer hardware.
-+ **Kernel** is the core of the **OS**, its the responsible to communicate  between the applications and the hardware of the computer 
++ **Kernel** is the core of the **OS**, its the responsible to communicate  between the applications and the hardware of the computer .
 <p align="center">
 	<img src="https://i.ibb.co/q9jLCZz/what-is-kernel-8.png" width="250">
 </p>
+
+How the kernel communicate with the hardware resources ?  
+Using **drivers** in machine code so the **CPU** knows the exact instructions.
+
+How to **communicate** with the kernel ?  
+When a program need access to the hardware or any system resources it make a **System Call** to the kernel.
