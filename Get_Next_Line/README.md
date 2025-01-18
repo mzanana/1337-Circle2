@@ -111,7 +111,7 @@ We have **three** standard file descriptors :
   Used by a program to send the output data to the terminal display, **stdout** like a bridge from the program to the user display.
   When running a command the system displays you the results using the **stdout**.
   **Redirection :** `command` `1>` or also `>` and then the file where you want the result to be saved, `ls 1> mzanana.txt` 
-  
+   
 + fd = 2 : Stderr the Standard Error.
   Also an output stream, but for errors messages, if the output contain a lot of line and errors and we want just to read the errors clearly.
   **Rediection :** `command` `2>` `fileDest`  
