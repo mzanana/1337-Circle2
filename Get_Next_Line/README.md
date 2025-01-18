@@ -132,3 +132,13 @@ Using **drivers** in machine code so the **CPU** knows the exact instructions.
 
 How to **communicate** with the kernel ?  
 When a program need access to the hardware or any system resources it make a **System Call** to the kernel.
+
+#### System Calls Definition
+
+**A system call** is a programmatic way in which a computer program requests a service from the kernel of the operating system it is executed on. A system call is a way for programs to ****interact with the operating system****. A computer program makes a system call when it requests the operating system’s kernel.
+The **System calls** are the primary way that the applications communicate with the kernel.  
+**System call** is a function provided by the operating system to request services from the kernel.   
+<p align="center">
+	<img src="https://i.ibb.co/4YPT2ff/img.png" width="300">
+</p>
+
