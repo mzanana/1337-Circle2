@@ -142,3 +142,13 @@ The **System calls** are the primary way that the applications communicate with 
 	<img src="https://i.ibb.co/4YPT2ff/img.png" width="300">
 </p>
 
+#### Types of System Calls
+
+<p align="center">
+	<img src="https://i.ibb.co/SJ2HCkP/image.png" width="400">
+</p>
+
++ **Process Control :** Operations like creating and controlling processes like `fork()`, `exec()`, `exit()`, `wait()`,  etc.
++ **File Management :** functions to work with files and directories like `open()`, `read()`, `write()`, `close()`, `unlink()`, etc.
+
+> **And other types ...**
