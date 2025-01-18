@@ -119,7 +119,7 @@ For example i want to combine the stdout and stderr : `command > output.txt 2> e
 
 ## System Calls
 
-#### Operating System and Kernel
+### Operating System and Kernel
 
 + **Operating system** act as the intermediary between the user and the computer hardware.
 + **Kernel** is the core of the **OS**, its the responsible to communicate  between the applications and the hardware of the computer .
@@ -133,7 +133,7 @@ Using **drivers** in machine code so the **CPU** knows the exact instructions.
 How to **communicate** with the kernel ?  
 When a program need access to the hardware or any system resources it make a **System Call** to the kernel.
 
-#### System Calls Definition
+### System Calls Definition
 
 **A system call** is a programmatic way in which a computer program requests a service from the kernel of the operating system it is executed on. A system call is a way for programs to ****interact with the operating system****. A computer program makes a system call when it requests the operating system’s kernel.
 The **System calls** are the primary way that the applications communicate with the kernel.  
@@ -142,7 +142,7 @@ The **System calls** are the primary way that the applications communicate with 
 	<img src="https://i.ibb.co/4YPT2ff/img.png" width="300">
 </p>
 
-#### Types of System Calls
+### Types of System Calls
 
 <p align="center">
 	<img src="https://i.ibb.co/SJ2HCkP/image.png" width="400">
@@ -151,4 +151,6 @@ The **System calls** are the primary way that the applications communicate with 
 + **Process Control :** Operations like creating and controlling processes like `fork()`, `exec()`, `exit()`, `wait()`,  etc.
 + **File Management :** functions to work with files and directories like `open()`, `read()`, `write()`, `close()`, `unlink()`, etc.
 
-> **And other types ...**
+In our project **Get_Next_Line** we gonna need the **file Management** type.  
+let's start by explaining `open()` System Call.  
+#### open()
