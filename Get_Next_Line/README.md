@@ -127,10 +127,10 @@ For example i want to combine the stdout and stderr : `command > output.txt 2> e
 	<img src="https://i.ibb.co/q9jLCZz/what-is-kernel-8.png" width="250">
 </p>
 
-How the kernel communicate with the hardware resources ?  
+>How the kernel communicate with the hardware resources ?  
 Using **drivers** in machine code so the **CPU** knows the exact instructions.
 
-How to **communicate** with the kernel ?  
+>How to **communicate** with the kernel ?  
 When a program need access to the hardware or any system resources it make a **System Call** to the kernel.
 
 ### System Calls Definition
