@@ -90,3 +90,12 @@ The difference between the **access mode** and the **Permissions :**
 
 + **Permissions :** Define the access rights for a file, controlling which users and groups are allowed to read, write or both. They are set at the file system level and are generally the same for all the processes.
 
+### Standard File Descriptors
+
+We have **three** standard file descriptors :
++ fd = 0 : Stdin stand for Standard Input;
++ fd = 1 : Stdout stand for Standard Output;
++ fd = 2 : Stderr stand for Standard Error.
+
+To explain them clearly we need to know what **data streams** mean :
+**Data streams** are like roads that carry information "to" and "from" a computer program. You can see it as a bridge between the **user** and **the system**.
