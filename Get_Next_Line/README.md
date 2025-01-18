@@ -122,7 +122,7 @@ For example i want to combine the stdout and stderr : `command > output.txt 2> e
 #### Operating System and Kernel
 
 + **Operating system** act as the intermediary between the user and the computer hardware.
-+ **Kernel** is the core of the **OS**, its the responsible to communicate  between the applications and the hardware of the computer
++ **Kernel** is the core of the **OS**, its the responsible to communicate  between the applications and the hardware of the computer 
 <p align="center">
 	<img src="https://i.ibb.co/q9jLCZz/what-is-kernel-8.png" width="250">
 </p>
