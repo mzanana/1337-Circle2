@@ -59,7 +59,9 @@ Also the static variable is **initialized** by default as **0** if not specify i
 
 # File Descriptor and System Calls
 
-### File Descriptor 
+## File Descriptor 
+
+### Definition 
 When a program open a file, the Operating System return a file descriptor as non-negative unique integer that the program can use to perform operations on that file, such as reading, writing or closing it.
 
 ### File Descriptor Table
@@ -92,10 +94,35 @@ The difference between the **access mode** and the **Permissions :**
 
 ### Standard File Descriptors
 
-We have **three** standard file descriptors :
-+ fd = 0 : Stdin stand for Standard Input;
-+ fd = 1 : Stdout stand for Standard Output;
-+ fd = 2 : Stderr stand for Standard Error.
 
 To explain them clearly we need to know what **data streams** mean :
-**Data streams** are like roads that carry information "to" and "from" a computer program. You can see it as a bridge between the **user** and **the system**.
+**Data streams** are like roads that carry information "to" and "from" a computer program. You can see it as a bridge between the **user** and the **system**.
+<p align="center">
+	<img src="https://i.ibb.co/98fs9Fw/hq720.jpg" width = "400">
+</p>
+
+We have **three** standard file descriptors :
++ fd = 0 : Stdin the Standard Input. 
+  When the user type something with the keyboard in a terminal environment, the program use the **stdin** to read the input of the user or other data source.  
+  Its the input stream for reading data typed by user or input files.
+  **Redirection :** `<`
+  
++ fd = 1 : Stdout the Standard Output.
+  Used by a program to send the output data to the terminal display, **stdout** like a bridge from the program to the user display.
+  When running a command the system displays you the results using the **stdout**.
+  **Redirection :** `command` `1>` or also `>` and then the file where you want the result to be saved, `ls 1> mzanana.txt` 
+  
++ fd = 2 : Stderr the Standard Error.
+  Also an output stream, but for errors messages, if the output contain a lot of line and errors and we want just to read the errors clearly.
+  **Rediection :** `command` `2>` `fileDest`  
+For example i want to combine the stdout and stderr : `command > output.txt 2> errors.txt`  
+
+## System Calls
+
+#### Operating System and Kernel
+
++ **Operating system** act as the intermediary between the user and the computer hardware.
++ **Kernel** is the core of the **OS**, its the responsible to communicate  between the applications and the hardware of the computer
+<p align="center">
+	<img src="https://i.ibb.co/q9jLCZz/what-is-kernel-8.png" width="250">
+</p>
