@@ -137,9 +137,11 @@ When a program need access to the hardware or any system resources it make a **S
 
 **A system call** is a programmatic way in which a computer program requests a service from the kernel of the operating system it is executed on.  
 A computer program makes a system call when it requests the operating system’s kernel.  
+
 <p align="center">
-	<img src="https://i.ibb.co/4YPT2ff/img.png" width="350">
+	<img src="https://i.ibb.co/4YPT2ff/img.png" width="300">
 </p>
+
 
 ### Types of System Calls
 
