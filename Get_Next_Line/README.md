@@ -151,7 +151,8 @@ A computer program makes a system call when it requests the operating system’s
 + **File Management :** functions to work with files and directories like `open()`, `read()`, `write()`, `close()`, `unlink()`, etc.
 
 In our project **Get_Next_Line** we gonna need the **file Management** type.  
-#### create()
+
+### create()
 **Syntax :**  
 `int create(char *filename, mode_t mode);`
 
@@ -169,7 +170,7 @@ int main() {
 }
 ```
 
-#### open()
+### open()
 **Syntax :**
 `int open (const char* Path, int flags);`
 + **Path :** Preferred to specify the exact path beginning with `/`
@@ -178,4 +179,21 @@ int main() {
 
 The open system call checks the file permissions and the access flags to ensure the process has the permission to open the file in the requested mode.   
 
-When a file is opened, the **offset** is set to the beginning of the file to be adjusted with read() and writ() sys calls,
+When a file is opened, the **offset** is set to the beginning of the file to be adjusted with read() and write() sys calls.
+
+### read()
+**Syntax :**
+`ssize_t read (int fd, void* buf, size_t cnt)`
+
++ **fd :** the file descriptor of the file we wanna read from;
++ **buf :** Buffer to read data from;
++ **cnt :** Length of the buffer.
+
+**read()** defined inside **<unistd.h>**, used to read data from a file descriptor into a buffer in memory.
+
+**Return value :** read() return the number of bytes been read on success, `0` on reaching the end of the file or `-1` on error occurred.
+
+**Note !!**   
+The buffer should be **large enough** to hols at least `cnt` bytes of data, if the buffer size is less than `cnt`, `read()` will not read the full `cnt` bytes, it will read up to the number of bytes that the **buffer can hold.** In this case **read()** gonna return the size of buffer which is the number of bytes actually read.
+
+### write()
