@@ -135,9 +135,8 @@ When a program need access to the hardware or any system resources it make a **S
 
 ### System Calls Definition
 
-**A system call** is a programmatic way in which a computer program requests a service from the kernel of the operating system it is executed on. A system call is a way for programs to ****interact with the operating system****. A computer program makes a system call when it requests the operating system’s kernel.
-The **System calls** are the primary way that the applications communicate with the kernel.  
-**System call** is a function provided by the operating system to request services from the kernel.   
+**A system call** is a programmatic way in which a computer program requests a service from the kernel of the operating system it is executed on.  
+A computer program makes a system call when it requests the operating system’s kernel.  
 <p align="center">
 	<img src="https://i.ibb.co/4YPT2ff/img.png" width="300">
 </p>
@@ -152,5 +151,31 @@ The **System calls** are the primary way that the applications communicate with 
 + **File Management :** functions to work with files and directories like `open()`, `read()`, `write()`, `close()`, `unlink()`, etc.
 
 In our project **Get_Next_Line** we gonna need the **file Management** type.  
-let's start by explaining `open()` System Call.  
+#### create()
+**Syntax :**  
+`int create(char *filename, mode_t mode);`
+
+The `create` function defined inside **<fcntl.h>**, used to create a new file in C specifying the name and the permissions.
+
+**Return value :** The first unused file descriptor and `-1` when an error.  
+**Example :**
+```C
+#include <fcntl.h>
+
+int main() {
+    const char *filename = "example.txt";
+
+    int fd = creat(filename, 0644);
+}
+```
+
 #### open()
+**Syntax :**
+`int open (const char* Path, int flags);`
++ **Path :** Preferred to specify the exact path beginning with `/`
++ **Flags :** To specify how you want to open the file like O_RDONLY, O_WRONLY, O_RDWR, O_APPEND to place the cursos at the end of the file.
+  O_CREAT to create a file if it doesn't exit, and we add the mode to specify the file permissions, so the final syntax gonna be : `int open = (const char* Path int flags | O_CREAT,  mode_t mode`  
+
+The open system call checks the file permissions and the access flags to ensure the process has the permission to open the file in the requested mode.   
+
+When a file is opened, the **offset** is set to the beginning of the file to be adjusted with read() and writ() sys calls,
