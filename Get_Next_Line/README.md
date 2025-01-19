@@ -197,3 +197,20 @@ When a file is opened, the **offset** is set to the beginning of the file to be 
 The buffer should be **large enough** to hols at least `cnt` bytes of data, if the buffer size is less than `cnt`, `read()` will not read the full `cnt` bytes, it will read up to the number of bytes that the **buffer can hold.** In this case **read()** gonna return the size of buffer which is the number of bytes actually read.
 
 ### write()
+**Syntax :**
+`ssize_t write (int fd, void* buf, size_t cnt);`
+
+**`write()`** to write the `cnt` bytes from a buffer `buf` in memory to the file associated with the file descriptor `fd`.  
++ **cnt** should not be greater than INT_MAX
++ **cnt = 0** write() simply return 0
+
+**Return value :** `write()` return the number of bytes written successfully, return `0` if `cnt = 0` or reaching the End Of File or `-1` on error.
+
+**Keys Points :**
++ The file needs to be opened for **write** operation;
++ **buf** needs to be at least as long as **cnt** to not face the overflow;
++ **cnt** is the requested number of bytes to write, while the return value is the actual number of bytes written.  
+  A partial **write** may occur for reasons like :
+  - Disk is full.
+  - Network issues (if `fd` is a socket).
+  - File system or device restrictions.
