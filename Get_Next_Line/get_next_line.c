@@ -61,5 +61,7 @@ char    *get_next_line(int fd)
             box = ft_strncpy(box, box + checkpoint, ft_strlen(box + checkpoint));
             return (buffer);
         }
+        if (!readret)
+            return (buffer = box, box = NULL, buffer);
     }
 }
