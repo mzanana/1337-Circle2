@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 18:54:13 by mzanana           #+#    #+#             */
-/*   Updated: 2025/01/22 18:54:15 by mzanana          ###   ########.fr       */
+/*   Created: 2025/01/24 20:49:35 by mzanana           #+#    #+#             */
+/*   Updated: 2025/01/24 20:49:38 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 120
-#endif
+#include <unistd.h>
+#include <stdlib.h>
 
-char    *get_next_line(int fd);
+# define BUFFER_SIZE 10
 #endif
