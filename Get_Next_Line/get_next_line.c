@@ -18,6 +18,7 @@ char    *get_next_line(int fd)
     char        *buffer;
     static char *box;
     ssize_t     readret;
+    ssize_t     checkpoint;
 
     buffer = NULL;
     while (1)
@@ -30,5 +31,9 @@ char    *get_next_line(int fd)
             return (free (buffer), free (box), box = NULL, NULL);
         buffer[readret] = '\0';
         box = ft_strjoin (box, buffer);
+        if (ft_strchr(box, &checkpoint))
+        {
+           
+        }
     }
 }
