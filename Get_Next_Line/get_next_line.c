@@ -13,6 +13,30 @@
 
 #include "get_next_line.h"
 
+char    *ft_strjoin(char *origin, char *added)
+{
+    char    *ret;
+    int     orlen;
+    int     adlen;
+
+    adlen = ft_strlen(added);
+    orlen = ft_strlen(origin);
+    if (!adlen && !orlen)
+        return (free(origin), free(added), NULL);
+    if (!orlen)
+        return (free(origin), ft_substr(added, 0, adlen, 1));
+    if(!adlen)
+        return (free (added), ft_substr(origin, 0, orlen, 1));
+    ret = malloc (sizeof (char) * (adlen + orlen + 1));
+    if (!ret)
+        return (free(origin), free(added), NULL);
+    ft_strncpy (ret, origin, orlen);
+    ft_strncpy (ret + orlen, added, adlen);
+    free (origin);
+    free (added);
+    return (ret);
+}
+
 char    *get_next_line(int fd)
 {
     char        *buffer;
