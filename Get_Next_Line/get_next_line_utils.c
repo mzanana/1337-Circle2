@@ -61,26 +61,17 @@ char    *ft_strncpy(char *dst, char *src, int n)
     return (dst);
 }
 
-char    *ft_strjoin(char *origin, char *added)
+char    *ft_strchr(char *src, size_t *ptr)
 {
-    char    *ret;
-    int     orlen;
-    int     adlen;
-
-    adlen = ft_strlen(added);
-    orlen = ft_strlen(origin);
-    if (!adlen && !orlen)
-        return (free(origin), free(added), NULL);
-    if (!orlen)
-        return (free(origin), ft_substr(added, 0, adlen, 1));
-    if(!adlen)
-        return (free (added), ft_substr(origin, 0, orlen, 1));
-    ret = malloc (sizeof (char) * (adlen + orlen + 1));
-    if (!ret)
-        return (free(origin), free(added), NULL);
-    ft_strncpy (ret, origin, orlen);
-    ft_strncpy (ret + orlen, added, adlen);
-    free (origin);
-    free (added);
-    return (ret);
+    if (!src)
+        return (0);
+    *ptr = 0;
+    while (src[(*ptr)])
+    {
+        if (src[(*ptr)] == '\n')
+            return (1);
+        (*ptr)++;
+    }
+    return (0);
 }
+
