@@ -33,7 +33,9 @@ char    *get_next_line(int fd)
         box = ft_strjoin (box, buffer);
         if (ft_strchr(box, &checkpoint))
         {
-           
+            buffer = ft_substr(box, 0, checkpoint, 0);
+            box = ft_strncpy(box, box + checkpoint, ft_strlen(box + checkpoint));
+            return (buffer);
         }
     }
 }
