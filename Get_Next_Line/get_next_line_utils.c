@@ -61,7 +61,7 @@ char    *ft_strncpy(char *dst, char *src, int n)
     return (dst);
 }
 
-char    *ft_strchr(char *src, size_t *ptr)
+int     ft_strchr(char *src, ssize_t *ptr)
 {
     if (!src)
         return (0);
