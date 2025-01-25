@@ -217,3 +217,15 @@ The buffer should be **large enough** to hols at least `cnt` bytes of data, if t
   - Network issues (if `fd` is a socket).
   - File system or device restrictions.
 
+# Leaks
+
+### What is a memory leak ?
+
+**Memory leak** occurs when you a create a memory in heap and you forget to **delete it.**  
+
+### Valgrind 
+
+To check the memory accesses for a C program under Linux we gonna use the **Valgrind** tool   
+The best video to understand deeply the Valgrind tool for memory leak :   
+[# C Dynamic Memory Debugging with Valgrind](https://www.youtube.com/watch?v=bb1bTJtgXrI&ab_channel=BrianFraser)  
+
