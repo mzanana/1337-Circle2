@@ -225,7 +225,12 @@ The buffer should be **large enough** to hols at least `cnt` bytes of data, if t
 
 ### Valgrind 
 
-To check the memory accesses for a C program under Linux we gonna use the **Valgrind** tool   
+To check the memory accesses and detect memory leak for a C program under Linux we gonna use the **Valgrind** tool.   
 The best video to understand deeply the Valgrind tool for memory leak :   
 [# C Dynamic Memory Debugging with Valgrind](https://www.youtube.com/watch?v=bb1bTJtgXrI&ab_channel=BrianFraser)  
+
+Part of the Valgrind output :  
+![leak](https://i.ibb.co/JQxzR65/Leak-Summary-obtained-by-Valgrind-with-definite-leaks.png)
+
+
 
