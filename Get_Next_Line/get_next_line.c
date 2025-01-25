@@ -44,7 +44,7 @@ char    *get_next_line(int fd)
     ssize_t     readret;
     ssize_t     checkpoint;
 
-    buffer = NULL;
+   
     while (1)
     {
         buffer = malloc (sizeof(char) * (ssize_t)BUFFER_SIZE + 1);
@@ -57,7 +57,7 @@ char    *get_next_line(int fd)
         box = ft_strjoin (box, buffer);
         if (ft_strchr(box, &checkpoint))
         {
-            buffer = ft_substr(box, 0, checkpoint, 0);
+            buffer = ft_substr(box, 0, ++checkpoint, 0);
             box = ft_strncpy(box, box + checkpoint, ft_strlen(box + checkpoint));
             return (buffer);
         }
