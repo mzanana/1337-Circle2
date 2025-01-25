@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 20:49:35 by mzanana           #+#    #+#             */
-/*   Updated: 2025/01/24 20:49:38 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/01/25 01:35:54 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-
-char    *get_next_line(int fd);
-int     ft_strlen(char *str);
-char    *ft_substr(char *src, int from, int to, int flag);
-char    *ft_strncpy(char *dst, char *src, int n);
-int     ft_strchr(char *src, ssize_t *ptr);
-char    *ft_strjoin(char *origin, char *added);
+char	*get_next_line(int fd);
+int		ft_strlen(char *str);
+char	*ft_substr(char *src, int from, int to, int flag);
+char	*ft_strncpy(char *dst, char *src, int n);
+int		ft_strchr(char *src, ssize_t *ptr);
+char	*ft_strjoin(char *origin, char *added);
 
 #endif
