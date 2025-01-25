@@ -27,4 +27,5 @@ char	*ft_strncpy(char *dst, char *src, int n);
 int		ft_strchr(char *src, ssize_t *ptr);
 char	*ft_strjoin(char *origin, char *added);
 
+
 #endif
