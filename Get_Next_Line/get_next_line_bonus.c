@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 20:52:30 by mzanana           #+#    #+#             */
-/*   Updated: 2025/01/26 00:23:56 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/01/26 23:33:28 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*get_next_line(int fd)
 
 	while (1)
 	{
-		if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
+		if (fd < 0 || fd >= 1024 || BUFFER_SIZE <= 0)
 			return (NULL);
 		buffer = malloc(sizeof(char) * (ssize_t)BUFFER_SIZE + 1);
 		readret = read(fd, buffer, BUFFER_SIZE);
