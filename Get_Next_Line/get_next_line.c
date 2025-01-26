@@ -45,11 +45,11 @@ char	*get_next_line(int fd)
 
 	while (1)
 	{
+		if (fd < 0 || BUFFER_SIZE <= 0)
+			return (NULL);
 		buffer = malloc(sizeof(char) * (ssize_t)BUFFER_SIZE + 1);
-		if (fd < 0 || BUFFER_SIZE <= 0 || !buffer)
-			return (free(buffer), free(box), box = NULL, NULL);
 		readret = read(fd, buffer, BUFFER_SIZE);
-		if (readret == -1)
+		if (!buffer || readret == -1)
 			return (free(buffer), free(box), box = NULL, NULL);
 		buffer[readret] = '\0';
 		box = ft_strjoin(box, buffer);
