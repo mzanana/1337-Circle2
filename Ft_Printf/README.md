@@ -55,3 +55,9 @@ ___
 
 **Registers** Are small and ultra-fast storage units built inside the CPU, designed to hold temporary data, addresses or instructions.  
 When you give instructions to the Cpu, it stores the instructions or data in the registers till the process is completed.  
+
+### Types of Registers
+
+There is a much types of registers depending on their function, the types we gonna need to understand are :  
++ **General-Purpose Registers (GPRs) :** 
++ **Floating-point Registers : **
