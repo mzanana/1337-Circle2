@@ -13,22 +13,31 @@ This is indicated by the parameter of the form `...`
 
 ## How Variadic function work 
 
-To access the variadic arguments from the function body, `stdarg` library helps us using types defined on it.  
-You need first to use the \<stdarg> header, which provides macros and types for handling variable arguments.  
+To access the variadic arguments from the function body, you have to use the methods specified in the `stdarg` library.  
+You need first to use the `<stdarg>` header, which provides macros and types for handling variable arguments.  
 
-### Key component :
+#### Key component :
 
 >Ap : stand for argument pointer
 
-+ **va_list :** Holds the information needed by va_start, va_arg, va_end, and va_copy, a type to hold the variable arguments;
++ **va_list :** Create the Variable Argument List, which holds the information needed by va_start, va_arg, va_end, and va_copy;
 
 + **va_start :** Enable access to variadic function argument, and initializes the **va_list** to point to the first variable arguments, following the named argument **ParmN** in :
   `void va_start (va_list Ap, ParmN);`   
 
-+ **va_arg :** Retrieves the next argument from **va_list**. Expand to an expression of type **T** that corresponds to the next parameter from the va_list **Ap** :
++ **va_arg :** Retrieves the next argument from **va_list**. return type **T** that corresponds to the next parameter from the va_list **Ap** :
   `T va_arg (va_list Ap, T);`
 
 + **va_copy :** Make a copy of the variadic function arguments, the `va_copy` macro copies `src` to `dest` :
   `void va_copy (va_list dest, va_list src);`
 
 + **va_end :** Clean up the **va_list** after processing arguments.
+
+# Cpu Registers
+
+**Registers** Are small and ultra-fast storage units built inside the CPU, designed to hold temporary data, addresses or instructions.  
+When you give instructions to the Cpu, it stores the instructions or data in the registers till the process is completed.  
+
+### Difference between Cache memory, RAM, and Registers :
+
+**Registers** stores the data before processing, **RAM** stores data during the process, and the **Cache Memory** stores the data after processing.
