@@ -1,6 +1,6 @@
 <h1 align="center">Ft_Printf</h1>
 
-## Like the previous project, we gonna check and learn the requirement before start coding! 
+### Like the previous project, we gonna check and learn the requirement before start coding! 
 
 ![from_subject](https://i.ibb.co/LzdVKN9P/Screenshot-from-2025-01-29-14-25-36.png)
 
@@ -46,20 +46,22 @@ You need first to use the `<stdarg>` header, which provides macros and types for
 	<img src ="https://i.ibb.co/pvxZLJBR/image.png" width=450>
 </p>
 
-
-> Each type of process and how it's architecture is made, so there is not a standard for all the processes
-
 ___
-**We gonna handle the case of the `x86_64` which used in intel and AMD processes and exactly  the`System V ABI`**   
+**Each type of process and how it's architecture is made, so there is not a standard for all the processes**
 ___
+
+
 ### Cpu Registers
-
 
 **Registers** Are small and ultra-fast storage units built inside the CPU, designed to hold temporary data, addresses or instructions.  
 When you give instructions to the Cpu, it stores the instructions or data in the registers till the process is completed.  
 
+> We gonna handle the case of the `x86_64` which used in intel and AMD processes and exactly  the`System V ABI   
+
 ### Types of Registers
 
 There is a much types of registers depending on their function, the types we gonna need to understand are :  
-+ **General-Purpose Registers (GPRs) :** 
-+ **Floating-point Registers : **
++ **General-Purpose Registers (GPRs) :** (RDI, RSI, RDX, RCX, R8, R9) They temporarily store data values like integers, And they are 64 bits wide, meaning they can hold values between 0 and 2^64-1. They hold function parameters passed to functions.
+
++ **Floating-point Registers :** They are part of the SSE which provides single instuctionm multiple data, These registers are used for floating point arithmetic as addition, multiplication, and comparison.  
+
