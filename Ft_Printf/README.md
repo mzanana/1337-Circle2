@@ -65,3 +65,10 @@ There is a much types of registers depending on their function, the types we gon
 
 + **Floating-point Registers :** They are part of the SSE which provides single instuctionm multiple data, These registers are used for floating point arithmetic as addition, multiplication, and comparison.  
 
+## Va_list Struct
+
+<p align="center">
+<img src = "https://i.ibb.co/tpQ1WHrq/codeimage-snippet-1.png" width =" 400" >
+</p>
++ **gp_offset :** Tracks the current position in the **general-purpose** registers used for integers arguments.  
++ **fp_offset :** Tracks the positions in the **floating-point** registers used for the floating arguments.
