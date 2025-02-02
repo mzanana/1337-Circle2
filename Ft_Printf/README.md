@@ -68,3 +68,23 @@ The arguments are stored on the stack after the registers are full, so the va_li
 
 + **reg_save_area :** Stores the original register values for retrieval, it is a pointer to a memory area in the stack where the content of the argument registers were saved when the function was called.  **It is not pointing inside the registers themselves**, when calling a variadic function, the system saves the register content into a reserved area in the stack to allow `va_list` access them consistently.  
 
+###  **va_start :** 
+Enable access to variadic function argument, and initializes the **va_list** to point to the first variable arguments, following the named argument **ParmN** in :
+  `void va_start (va_list Ap, ParmN);`    
+`va_start` sets `gp_offsets = 0 ` to indicate the first register argument.
+
+### **va_arg :** 
+Retrieves the next argument from **va_list**. return type **T** that corresponds to the next parameter from the va_list **Ap** :
+  `T va_arg (va_list Ap, T);`  
+it checks if there are arguments left in register, if the registers are used it switches to the stack.  
+It increments `gp_offset += 8` or moves `overflow_arg_area += 8` forward.  
+Once `va_arg` moves forward, you cannot access previous values.
+
+### **va_copy :**
+ Make a copy of the variadic function arguments, the `va_copy` macro copies `src` to `dest` :
+  `void va_copy (va_list dest, va_list src);`
+
+### **va_end :** 
+Clean up the **va_list** after processing arguments.
+
+
