@@ -51,3 +51,6 @@ You need first to use the `<stdarg.h>` header, which provides macros and types f
 
 >Ap : stand for argument pointer
 
+### **va_list :** 
+The `va_list` create the Variable Argument List, which holds the information needed by va_start, va_arg, va_end, and va_copy. it's actually a **struct** that tracks where the next argument is.  
+The arguments are stored on the stack after the registers are full, so the va_list just track the places of the arguments not store the arguments inside it.  
