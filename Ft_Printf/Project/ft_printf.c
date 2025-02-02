@@ -4,6 +4,10 @@ int	ft_helper(va_list args, char c, int *i)
 {
 	if (c == 'c')
 		ft_putchar(va_arg(args, int), i);
+	if (c == 'd')
+		ft_putnbr(va_arg(args, int), i);
+    if (c == 's')
+         ft_putstr(va_arg(args, char*), i);
 	return (*i);
 }
 
