@@ -15,28 +15,6 @@ This is indicated by the parameter of the form `...`
 
 **Example :** `int printf (const char* format, ...);`   
 
-## How Variadic function work 
-
-To access the variadic arguments from the function body, you have to use the methods specified in the `stdarg` library.  
-You need first to use the `<stdarg>` header, which provides macros and types for handling variable arguments.  
-
-
-#### Key component :
-
->Ap : stand for argument pointer
-
-+ **va_list :** Create the Variable Argument List, which holds the information needed by va_start, va_arg, va_end, and va_copy;
-
-+ **va_start :** Enable access to variadic function argument, and initializes the **va_list** to point to the first variable arguments, following the named argument **ParmN** in :
-  `void va_start (va_list Ap, ParmN);`   
-
-+ **va_arg :** Retrieves the next argument from **va_list**. return type **T** that corresponds to the next parameter from the va_list **Ap** :
-  `T va_arg (va_list Ap, T);`
-
-+ **va_copy :** Make a copy of the variadic function arguments, the `va_copy` macro copies `src` to `dest` :
-  `void va_copy (va_list dest, va_list src);`
-
-+ **va_end :** Clean up the **va_list** after processing arguments.
 
 ### Difference between Cache memory, RAM, and Registers :
 
@@ -61,14 +39,15 @@ When you give instructions to the Cpu, it stores the instructions or data in the
 ### Types of Registers
 
 There is a much types of registers depending on their function, the types we gonna need to understand are :  
-+ **General-Purpose Registers (GPRs) :** (RDI, RSI, RDX, RCX, R8, R9) They temporarily store data values like integers, And they are 64 bits wide, meaning they can hold values between 0 and 2^64-1. They hold function parameters passed to functions.
++ **General-Purpose Registers (GPRs) :** The maximum of arguments can be stored on the gp register is **6 Arguments** (RDI, RSI, RDX, RCX, R8, R9). The gp Registers temporarily store data values like integers, And they are 64 bits wide, meaning they can hold values between 0 and 2^64-1. They hold function parameters passed to functions.  
 
-+ **Floating-point Registers :** They are part of the SSE which provides single instuctionm multiple data, These registers are used for floating point arithmetic as addition, multiplication, and comparison.  
++ **Floating-point Registers :** The maximum number of arguments that can be stores on the fp register is **8 Arguments** (`XMM0`–`XMM7`). Those registers are part of the SSE which provides single instuctionm multiple data, These registers are used for floating point arithmetic as addition, multiplication, and comparison.  
 
-## Va_list Struct
+## How Variadic function work 
 
-<p align="center">
-<img src = "https://i.ibb.co/tpQ1WHrq/codeimage-snippet-1.png" width =" 400" >
-</p>
-+ **gp_offset :** Tracks the current position in the **general-purpose** registers used for integers arguments.  
-+ **fp_offset :** Tracks the positions in the **floating-point** registers used for the floating arguments.
+To access the variadic arguments from the function body, you have to use the methods specified in the `stdarg` library.  
+You need first to use the `<stdarg.h>` header, which provides macros and types for handling variable arguments.  
+#### Key component :
+
+>Ap : stand for argument pointer
+
