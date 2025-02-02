@@ -54,3 +54,17 @@ You need first to use the `<stdarg.h>` header, which provides macros and types f
 ### **va_list :** 
 The `va_list` create the Variable Argument List, which holds the information needed by va_start, va_arg, va_end, and va_copy. it's actually a **struct** that tracks where the next argument is.  
 The arguments are stored on the stack after the registers are full, so the va_list just track the places of the arguments not store the arguments inside it.  
+#### Va_list Struct
+
+<p align="center">
+<img src = "https://i.ibb.co/tpQ1WHrq/codeimage-snippet-1.png" width =" 400" >
+</p>
+
++ **gp_offset :** Tracks the current position in the **general-purpose** registers used for integers arguments, in other words it trucks how much of general-purpose register area has been used. 6 registers×8 bytes=48 bytes , so the range of the `gp_offset` from 0 to 48
+
++ **fp_offset :** Tracks the positions in the **floating-point** registers used for the floating arguments. 8 registers×8 bytes=64 bytes, so the range of the `fp_offset` from 48 to 112 .
+
++ **overflow_arg_area :** A pointer to the location in memory where additional arguments are stored if the registers are exhausted, for example if we have more than 6 gp arguments then from the 7th are stored in the stack.  
+
++ **reg_save_area :** Stores the original register values for retrieval, it is a pointer to a memory area in the stack where the content of the argument registers were saved when the function was called.  **It is not pointing inside the registers themselves**, when calling a variadic function, the system saves the register content into a reserved area in the stack to allow `va_list` access them consistently.  
+
