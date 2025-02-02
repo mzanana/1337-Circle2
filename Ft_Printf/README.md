@@ -36,6 +36,9 @@ When you give instructions to the Cpu, it stores the instructions or data in the
 
 > We gonna handle the case of the `x86_64` which used in intel and AMD processes and exactly  the`System V ABI   
 
+<p align = "center">
+	<img src = "https://i.imgur.com/5x4jmrP.png" height ="300" >
+</p>
 ### Types of Registers
 
 There is a much types of registers depending on their function, the types we gonna need to understand are :  
@@ -86,5 +89,4 @@ Once `va_arg` moves forward, you cannot access previous values.
 
 ### **va_end :** 
 Clean up the **va_list** after processing arguments.
-
 
