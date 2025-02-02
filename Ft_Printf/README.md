@@ -39,6 +39,7 @@ When you give instructions to the Cpu, it stores the instructions or data in the
 <p align = "center">
 	<img src = "https://i.imgur.com/5x4jmrP.png" height ="300" >
 </p>
+
 ### Types of Registers
 
 There is a much types of registers depending on their function, the types we gonna need to understand are :  
