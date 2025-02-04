@@ -89,5 +89,6 @@ Once `va_arg` moves forward, you cannot access previous values.
   `void va_copy (va_list dest, va_list src);`
 
 ### **va_end :** 
-Clean up the **va_list** after processing arguments.
+ While the C standard technically requires it after using va_arg, on modern systems it’s mostly a doesn't do anything, it doesn’t "clean up" or free the memory. Think of it as closing a polite handshake with the compiler, not actual work. You can skip it without immediate issues, but including it keeps your code follows standard specifications and Cross-platform software! 👽👽👽
+
 
