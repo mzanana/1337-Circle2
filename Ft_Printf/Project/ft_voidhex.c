@@ -6,28 +6,28 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:29:52 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/04 16:06:56 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 16:31:07 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_voidhex(unsigned long nbr, int *x)
+void	ft_voidhex(unsigned long nbr, int *x)
 {
-    char	*hold;
-    char	str[20];
+	char	*hold;
+	char	str[20];
 	int		i;
 
-    if (!nbr)
-    {
-        ft_putstr("(nil)", x);
-        return;
-    }
+	if (!nbr)
+	{
+		ft_putstr("(nil)", x);
+		return ;
+	}
 	hold = "0123456789abcdef";
 	i = 0;
 	while (nbr > 0)
 	{
-		str[i] = hold[nbr%16];	
+		str[i] = hold[nbr % 16];
 		nbr /= 16;
 		i++;
 	}
