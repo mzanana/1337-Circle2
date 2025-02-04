@@ -39,9 +39,9 @@ int	ft_helper(va_list args, char c, int *i)
 	else if (c == 'p')
 		ft_voidhex(va_arg(args, unsigned long), i);
 	else if (c == 'x')
-		ft_hexal(va_arg(args, unsigned int), i, 'x');
+		ft_hexal(va_arg(args, unsigned int), i, "0123456789abcdef");
 	else if (c == 'X')
-		ft_hexal(va_arg(args, unsigned int), i, 'X');
+		ft_hexal(va_arg(args, unsigned int), i, "0123456789ABCDEF");
 	else if (c == '%')
 		ft_putchar('%', i);
 	return (*i);
