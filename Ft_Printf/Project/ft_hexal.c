@@ -12,24 +12,22 @@
 
 #include "ft_printf.h"
 
-void	ft_hexal(unsigned int nb, int *x, char c)
+void    ft_hexal(unsigned int nb, int *x, char *str)
 {
-	char	*lower;
-	char	*upper;
+	char	buf[12];
+	int		i;
 
-	lower = "0123456789abcdef";
-	upper = "0123456789ABCDEF";
-	if (nb == 0)
+    if (nb == 0)
+    {
+        ft_putchar('0', x);
+        return;
+    }
+	i = 0;
+    while (nb > 0)
 	{
-		ft_putchar('0', x);
-		return ;
+		buf[i++] = str[nb%16];
+		nb /= 16;
 	}
-	else if (nb >= 16)
-	{
-		ft_hexal(nb / 16, x, c);
-	}
-	if (c == 'x')
-		ft_putchar(lower[nb % 16], x);
-	else if (c == 'X')
-		ft_putchar(upper[nb % 16], x);
+	while (--i >= 0)
+		ft_putchar(buf[i], x);
 }
