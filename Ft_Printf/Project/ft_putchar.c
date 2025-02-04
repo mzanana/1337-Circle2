@@ -6,15 +6,18 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:51:42 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/02 15:51:44 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:20:12 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-void ft_putchar(char c, int *x)
+void    ft_putchar(char c, int *x)
 {
-    write(1, &c, 1);
+    int y;
+
+    y = write(1, &c, 1);
+    if (y == -1)
+        return;
     (*x)++;
 }
