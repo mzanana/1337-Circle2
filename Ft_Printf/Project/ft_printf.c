@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:51:22 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/04 15:18:29 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:30:34 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_helper(va_list args, char c, int *i)
 		ft_putnbr(va_arg(args, int), i);
 	else if (c == 's')
 		ft_putstr(va_arg(args, char*), i);
-	// else if (c == 'p')
-	// 	ft_voidhex(va_arg(args, void *), i);
+	else if (c == 'p')
+		ft_voidhex(va_arg(args, unsigned long), i);
 	else if (c == '%')
 		ft_putchar('%', i);
 	return (*i);
