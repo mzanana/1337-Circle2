@@ -19,10 +19,10 @@ void	ft_unsigned(unsigned int x, int *y)
 	int		i;
 
 	if (x == 0)
-        return (ft_putchar('0', y));
+		return (ft_putchar('0', y));
 	hold = "0123456789";
 	i = 0;
-	while(x > 0)
+	while (x > 0)
 	{
 		str[i++] = hold[x % 10];
 		x /= 10;
