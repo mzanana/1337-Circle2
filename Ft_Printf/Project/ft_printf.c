@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:51:22 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/04 15:35:14 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:42:03 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int	ft_helper(va_list args, char c, int *i)
 		ft_unsigned(va_arg(args, unsigned int), i);
 	else if (c == 'p')
 		ft_voidhex(va_arg(args, unsigned long), i);
+	else if (c == 'x')
+		ft_hexal(va_arg(args, unsigned int), i, 'x');
+	else if (c == 'X')
+		ft_hexal(va_arg(args, unsigned int), i, 'X');
 	else if (c == '%')
 		ft_putchar('%', i);
 	return (*i);
