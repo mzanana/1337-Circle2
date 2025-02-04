@@ -12,59 +12,37 @@
 
 #include "ft_printf.h"
 
-int	ft_calcule(int nb)
+void	ft_isnegatif(int *x, int *y)
 {
-	int	ret;
-
-	ret = 0;
-	if (nb <= 0)
+	if (*x == 0)
+		ft_putchar('0', y);
+	else if (*x < 0)
 	{
-		nb = -nb;
-		ret = 1;
+		ft_putchar('-', y);
+		(*x) = -(*x);
 	}
-	while (nb > 0)
-	{
-		nb /= 10;
-		ret++;
-	}
-	return (ret);
+	return ;
 }
 
-int	ft_isnegatif(int *i, int *j)
+void	ft_putnbr(int x, int *y)
 {
-	if ((*i) < 0)
-	{
-		(*i) = -(*i);
-		(*j) = 1;
-		return (1);
-	}
-	return (0);
-}
+	char	str[12];
+	char	*hold;
+	int		i;
 
-void	ft_putnbr(int nb, int *x)
-{
-	int		lenght;
-	int		stop;
-	char	*str;
-
-	if (nb == -2147483648)
+	if (x == -2147483648)
 	{
-		ft_putstr("-2147483648", x);
-		return ;
+		ft_putstr("-2147483648", y);
+		return;
 	}
-	lenght = ft_calcule(nb);
-	str = malloc(sizeof(char) * (lenght + 1));
-	if (!str)
-		return ;
-	str[lenght] = '\0';
-	stop = 0;
-	if (ft_isnegatif(&nb, &stop))
-		str[0] = '-';
-	while (--lenght >= stop)
+	hold = "0123456789";
+	ft_isnegatif(&x, y);
+	i = 0;
+	while(x > 0)
 	{
-		str[lenght] = nb % 10 + 48;
-		nb /= 10;
+		str[i++] = hold[x % 10];
+		x /= 10;
 	}
-	ft_putstr(str, x);
-	free(str);
+	while (--i >= 0)
+		ft_putchar(str[i], y);
 }
