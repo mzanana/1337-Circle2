@@ -24,7 +24,7 @@ void	ft_putnbr(int nb, int *x);
 void	ft_putstr(char *str, int *x);
 void	ft_unsigned(unsigned int nb, int *x);
 void	ft_voidhex(unsigned long nbr, int *x);
-void	ft_hexal(unsigned int nb, int *x, char c);
+void	ft_hexal(unsigned int nb, int *x, char *c);
 int		ft_strchr(char *str, char c);
 
 #endif
