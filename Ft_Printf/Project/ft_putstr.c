@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:52:03 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/02 15:52:04 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:26:39 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	ft_putstr(char *str, int *x)
 {
 	int i;
 
+	if (!str)
+	{
+		write(1,"(nill)",6);
+		(*x) += 6;
+		return;
+	}
 	i = 0;
 	while (str[i])
 	{
