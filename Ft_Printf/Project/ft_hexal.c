@@ -12,20 +12,20 @@
 
 #include "ft_printf.h"
 
-void    ft_hexal(unsigned int nb, int *x, char *str)
+void	ft_hexal(unsigned int nb, int *x, char *str)
 {
 	char	buf[12];
 	int		i;
 
-    if (nb == 0)
-    {
-        ft_putchar('0', x);
-        return;
-    }
-	i = 0;
-    while (nb > 0)
+	if (nb == 0)
 	{
-		buf[i++] = str[nb%16];
+		ft_putchar('0', x);
+		return ;
+	}
+	i = 0;
+	while (nb > 0)
+	{
+		buf[i++] = str[nb % 16];
 		nb /= 16;
 	}
 	while (--i >= 0)
