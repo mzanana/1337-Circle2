@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:51:52 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/02 15:51:54 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:25:00 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,19 @@ int ft_isnegatif(int *i, int *j)
 
 void	ft_putnbr(int nb, int *x)
 {
-	int lenght;
-	int stop;
-	char *str;
+	int		lenght;
+	int		stop;
+	char	*str;
 
+	if (nb == -2147483648)
+	{
+		ft_putstr("-2147483648", x);
+		return;
+	}
 	lenght = ft_calcule(nb);
 	str = malloc(sizeof(char) * (lenght + 1));
+	if (!str)
+		return;
 	str[lenght] = '\0';
 	stop = 0;
 	if (ft_isnegatif(&nb, &stop))
