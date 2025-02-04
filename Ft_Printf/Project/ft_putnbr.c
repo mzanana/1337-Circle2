@@ -33,12 +33,12 @@ void	ft_putnbr(int x, int *y)
 	if (x == -2147483648)
 	{
 		ft_putstr("-2147483648", y);
-		return;
+		return ;
 	}
 	hold = "0123456789";
 	ft_isnegatif(&x, y);
 	i = 0;
-	while(x > 0)
+	while (x > 0)
 	{
 		str[i++] = hold[x % 10];
 		x /= 10;
