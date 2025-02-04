@@ -6,24 +6,11 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:29:52 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/04 15:30:01 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 16:06:56 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_calloc(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		str[i] = 0;
-		i++;
-	}
-	
-}
 
 void    ft_voidhex(unsigned long nbr, int *x)
 {
@@ -38,7 +25,6 @@ void    ft_voidhex(unsigned long nbr, int *x)
     }
 	hold = "0123456789abcdef";
 	i = 0;
-	ft_calloc(str);
 	while (nbr > 0)
 	{
 		str[i] = hold[nbr%16];	
