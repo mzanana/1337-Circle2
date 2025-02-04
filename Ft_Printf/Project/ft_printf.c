@@ -6,11 +6,25 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:51:22 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/02 15:51:25 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/04 15:12:43 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_strchr(char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int	ft_helper(va_list args, char c, int *i)
 {
@@ -18,12 +32,12 @@ int	ft_helper(va_list args, char c, int *i)
 		ft_putchar(va_arg(args, int), i);
 	if (c == 'd')
 		ft_putnbr(va_arg(args, int), i);
-    if (c == 's')
-        ft_putstr(va_arg(args, char*), i);
-    if (c == 'p')
-        ft_voidhex(va_arg(args, void *), i);
-    if (c == '%')
-        ft_putchar(va_arg(args, int), i);
+	if (c == 's')
+		ft_putstr(va_arg(args, char*), i);
+	if (c == 'p')
+		ft_voidhex(va_arg(args, void *), i);
+	if (c == '%')
+		ft_putchar(va_arg(args, int), i);
 	return (*i);
 }
 
@@ -40,7 +54,7 @@ int	ft_printf(const char *str, ...)
 	ret = 0;
 	while (str[i])
 	{
-		if (str[i] == '%' && str[i + 1])
+		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
 		{
 			i++;
 			ret = ft_helper(args, str[i], &ret);
