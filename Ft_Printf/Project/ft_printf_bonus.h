@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:51:32 by mzanana           #+#    #+#             */
-/*   Updated: 2025/02/04 21:50:11 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/02/05 12:56:41 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	ft_voidhex(unsigned long nbr, int *x);
 void	ft_unsigned(unsigned int nb, int *x);
 void	ft_hexal(unsigned int nb, int *x, char *str, char c);
 int		ft_strchr(char *str, char c);
-//void	ft_hashtag(void f(unsigned int x, int *y, char z), char a);
 void	ft_plus(int x, char c, int *y);
 #endif
