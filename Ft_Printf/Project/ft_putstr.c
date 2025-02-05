@@ -18,7 +18,7 @@ void	ft_putstr(char *str, int *x)
 
 	if (!str)
 	{
-		write (1, "(null)", 6);
+		write (1, "(nill)", 6);
 		(*x) += 6;
 		return ;
 	}
