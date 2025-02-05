@@ -36,7 +36,7 @@ void	ft_putnbr(int x, int *y)
 		return ;
 	}
 	hold = "0123456789";
-	ft_checksign(&x, y);
+	ft_isnegatif(&x, y);
 	i = 0;
 	while (x > 0)
 	{
