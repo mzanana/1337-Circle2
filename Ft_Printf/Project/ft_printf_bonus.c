@@ -26,7 +26,7 @@ int	ft_strchr(char *str, char c)
 	return (0);
 }
 
-int	ft_bonuscheck(va_list args, char flag, char next, int *ret)
+int	ft_bonuscheck(va_list args, char flag, char next, int *ret, int *i)
 {
 	if (flag == '+' && (next == 'd' || next == 'i'))
 		ft_plus(va_arg(args, int), '+', ret);
@@ -35,7 +35,11 @@ int	ft_bonuscheck(va_list args, char flag, char next, int *ret)
 	else if (flag == '#' && next == 'x')
 		ft_hexal(va_arg(args, unsigned int), ret, "0123456789abcdef", 'x');
 	else if (flag == '#' && next == 'X')
+	{
 		ft_hexal(va_arg(args, unsigned int), ret, "0123456789abcdef", 'X');
+	}
+	(*i)++;
+	return (*ret);
 }
 
 int	ft_helper(va_list args, char c, int *i)
@@ -76,7 +80,7 @@ int	ft_printf(const char *str, ...)
 		{
 			i++;
 			if (ft_strchr("# +", str[i]) && str[i + 1])
-				ret = ft_bonuscheck(args, str[i], str[i + 1], ret);
+				ret = ft_bonuscheck(args, str[i], str[i + 1], &ret, &i);
 			else if (ft_strchr("cspdiuxX%", str[i]))
 				ret = ft_helper(args, str[i], &ret);
 		}

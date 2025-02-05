@@ -19,7 +19,7 @@ void	ft_unsigned(unsigned int x, int *y)
 	int		i;
 
 	if (x == 0)
-		return (ft_putchar('0', x));
+		return (ft_putchar('0', y));
 	hold = "0123456789";
 	i = 0;
 	while (x > 0)

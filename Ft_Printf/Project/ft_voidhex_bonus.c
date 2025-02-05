@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-
 void	ft_voidhex(unsigned long nbr, int *x)
 {
 	char	*hold;
@@ -36,4 +35,3 @@ void	ft_voidhex(unsigned long nbr, int *x)
 	while (--i >= 0)
 		ft_putchar(str[i], x);
 }
-	
